@@ -11,6 +11,9 @@ import java.util.List;
 public class EmprestimosBd {
 
     private List<Emprestimo> emprestimos;
+    public EmprestimosBd(){
+        this.emprestimos = new ArrayList<>();
+    }
 
     //consulta de todos os empréstimos registrados
     public List<Emprestimo> findAll(){
@@ -29,7 +32,7 @@ public class EmprestimosBd {
     //adicionar novos livros a um empréstimo existente, bem como atualizar a data final do empréstimo
     public boolean update(int id, Emprestimo emprestimo, Livro livro){
         Emprestimo emprestimoBd = emprestimos.stream()
-                .filter(f -> f.getId() == id)
+                .filter(emprestimo1 -> emprestimo1.getId() == id)
                 .findFirst()
                 .orElse(null);
 
@@ -42,25 +45,24 @@ public class EmprestimosBd {
 
         return true;
     }
+
     //atualizar os dados do cliente que realizou o empréstimo
-    public Emprestimo updateClienteAndEmprestimo(int id, Cliente cliente){
+    public boolean updateClienteAndEmprestimo(int id, Cliente cliente){
         Emprestimo emprestimoBd = emprestimos.stream()
                 .filter(c -> c.getId() == id)
                 .findFirst()
                 .orElse(null);
 
-        //if (emprestimoBd != null){
-        //    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        //}
-
-        assert emprestimoBd != null;
+        if (emprestimoBd != null){
+            return false;
+        }
         //emprestimoBd.setCliente(cliente.getNome());
         //emprestimoBd.setCliente(cliente.getCpf());
         //emprestimoBd.setCliente(cliente.getEmail());
         //rever telefone depois
         //emprestimoBd.setCliente(String.valueOf(cliente.getTelefone()));
 
-        return emprestimoBd;
+        return true;
     }
     public boolean delete(int id){
         Emprestimo emprestimoBd = emprestimos.stream()

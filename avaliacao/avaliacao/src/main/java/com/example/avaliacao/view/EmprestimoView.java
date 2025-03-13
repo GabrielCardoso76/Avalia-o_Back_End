@@ -25,12 +25,12 @@ public class EmprestimoView {
     public boolean insert(@RequestBody Emprestimo emprestimo){
         return emprestimoController.insert(emprestimo);
     }
-    @PutMapping("/addLivrosEmprExistenteEDataF/{livro}")
+    @PutMapping("/addLivrosEmprExistenteEDataF/{id}")
     public boolean update(@PathVariable int id,@RequestBody Emprestimo emprestimo,@RequestBody Livro livro){
         return emprestimoController.update(id, emprestimo, livro);
     }
-    @PutMapping("/attClienteJaTemUmEmprestimo/{cliente}")
-    public Emprestimo updateClienteAndEmprestimo(@PathVariable int id,@RequestBody Cliente cliente){
+    @PutMapping("/attClienteJaTemUmEmprestimo/{id}")
+    public boolean updateClienteAndEmprestimo(@PathVariable int id,@RequestBody Cliente cliente){
         return emprestimoController.updateClienteAndEmprestimo(id, cliente);
     }
     @DeleteMapping("/{id}")

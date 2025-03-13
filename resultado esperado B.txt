@@ -1,0 +1,10 @@
+Para iniciantes esse código tem 
+
+POST: que envia dados, nesse caso pode ser informações do livro, cliente ou sobre o empréstimo .
+
+GET: da acesso a informações que podem ser relacionadas a algum informação especifica ou informações gerais de um objeto 
+
+PUT: atualiza as informações , que podem ser atualizadas tbm de forma geral nos objeto ou especifica 
+
+DELETE: exclui completamente como informações livros e empréstimos 
+

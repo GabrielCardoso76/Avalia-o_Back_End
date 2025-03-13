@@ -23,7 +23,7 @@ public class EmprestimoController {
     public boolean update(int id, Emprestimo emprestimo, Livro livro){
         return repository.update(id, emprestimo, livro);
     }
-    public Emprestimo updateClienteAndEmprestimo(int id, Cliente cliente){
+    public boolean updateClienteAndEmprestimo(int id, Cliente cliente){
         return repository.updateClienteAndEmprestimo(id, cliente);
     }
     public boolean delete(int id){
