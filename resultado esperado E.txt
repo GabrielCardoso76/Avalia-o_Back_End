@@ -1,0 +1,3 @@
+Os padrões de design, categorizados em criacionais, estruturais e comportamentais, são soluções reutilizáveis para problemas recorrentes em software, que visam melhorar a qualidade e flexibilidade do código. 
+
+breve explicações: Padrões de design, ou Design Patterns, são soluções reutilizáveis para problemas comuns no desenvolvimento de software, oferecendo modelos testados e comprovados para criar código mais flexível, legível e fácil de manter. 
